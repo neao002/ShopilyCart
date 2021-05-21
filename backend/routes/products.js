@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Plant = require("../models/products");
+const Product = require("../models/products");
 
 const multer = require("multer");
 
@@ -13,27 +13,31 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
+// ading new product but also a picture
+
 router.post("/add", upload.single("producPic"), (req, res) => {
-  // data from frontend UI
   console.log(req.body, req.file);
-  const newPlant = new Plant({
+  const newProduct = new Product({
     name: req.body.name,
-    style: req.body.style,
-    color: req.body.color,
-    photoPicSelect: "/images/" + req.file.filename,
+    price: req.body.price,
+    descripcion: req.body.descripcion,
+    producPic: "/images/" + req.file.filename,
   });
-  newPlant.save((err, doc) => {
-    res.json("A new Plant has been added!");
+  newProduct.save((err, doc) => {
+    res.json("A new product has been added!");
   });
 });
+
 router.get("/add", (req, res) => {
-  Plant.find((err, docs) => {
+  Product.find((err, docs) => {
     res.json(docs);
   });
 });
+
+// getting rid of you =)
 router.get("/delete/:id", (req, res) => {
-  Plant.findByIdAndDelete(req.params.id, (err, doc) => {
-    res.json("One plant data has been deleted!");
+  Product.findByIdAndDelete(req.params.id, (err, doc) => {
+    res.json("One product from the data has been deleted!");
   });
 });
 module.exports = router;

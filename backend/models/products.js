@@ -5,9 +5,9 @@ const LogIn = new Schema({
   name: String,
   price: Number,
   descripcion: String,
-  my_picture: String,
+  producPic: String,
 });
 
-const UserLogIn = mongoose.model("UserLogin", LogIn);
+const Product = mongoose.model("Product", LogIn);
 
-module.exports = UserLogIn;
+module.exports = Product;

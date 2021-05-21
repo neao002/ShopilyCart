@@ -14,9 +14,9 @@ function Add_new() {
     event.preventDefault();
     const getProduct = new FormData();
     getProduct.append("name", data.name);
-    getProduct.append("style", data.style);
-    getProduct.append("color", data.color);
-    console.log(picture);
+    getProduct.append("price", data.price);
+    getProduct.append("descripcion", data.descripcion);
+
     getProduct.append("producPic", picture);
 
     const config = {
@@ -26,7 +26,7 @@ function Add_new() {
     };
 
     axios
-      .post("http://localhost:5000/product/add", getProduct, config)
+      .post("http://localhost:5000/products/add", getProduct, config)
       .then((response) => {
         console.log(response.data);
       });
@@ -72,7 +72,7 @@ function Add_new() {
             />
           </Form.Group>
           <Button variant="danger" type="submit">
-            Add to Garden
+            Add to Shop
           </Button>
         </Form>
       </Col>

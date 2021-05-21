@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-
+const productRouter = require("./routes/products");
 const cors = require("cors");
 require("dotenv").config();
 
@@ -13,24 +13,12 @@ app.use(cors());
 
 app.use(express.json());
 
-const session = require("express-session");
-
-app.use(
-  session({
-    secret: "My Password",
-    cookie: {
-      maxAge: 900 * 60 * 10,
-    },
-  })
-);
-
-app.post("/products", (req, res) => {});
-app.post("/", (req, res) => {});
+app.use("/products", productRouter);
 
 app.get("*", (req, res) => {
   res.render("error");
 });
 
 app.listen(PORT, () => {
-  console.log("Backend is running on por" + PORT);
+  console.log("Backend is running on port" + PORT);
 });
