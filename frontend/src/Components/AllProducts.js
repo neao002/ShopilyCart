@@ -15,6 +15,13 @@ function All_plant() {
   const deleteProduct = (id) => {
     axios.get("/products/delete/" + id).then((response) => {
       setDeleteMsg(response.data);
+      console.log(response.data);
+    });
+  };
+
+  const updateProduct = (id) => {
+    axios.get("/products/update/" + id).then((response) => {
+      console.log(response);
     });
   };
 
@@ -28,9 +35,12 @@ function All_plant() {
             <h3>Product Name: {item.name}</h3>
             <h3>Price {item.price}$</h3>
             <h3>Description : {item.descripcion}</h3>
-            <img src={`${item.producPic}`} />
+            <img src={`http://localhost:5000/${item.producPic}`} />
             <button type="button" onClick={() => deleteProduct(item._id)}>
               Delete
+            </button>
+            <button type="button" onClick={() => updateProduct(item._id)}>
+              Update
             </button>
           </Col>
         );

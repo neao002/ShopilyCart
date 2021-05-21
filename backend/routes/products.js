@@ -40,4 +40,15 @@ router.get("/delete/:id", (req, res) => {
     res.json("One product from the data has been deleted!");
   });
 });
+
+// updating
+router.get("/update/:id", async (req, res) => {
+  const { name, price, descripcion } = req.body;
+  await User.findByIdAndUpdate(req.params.id, {
+    name,
+    price,
+    descripcion,
+  });
+});
+
 module.exports = router;
