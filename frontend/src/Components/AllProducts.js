@@ -1,7 +1,8 @@
 import { Row, Col, Alert } from "react-bootstrap";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-function All_plant() {
+function All_plant(props) {
   const [product, setProduct] = useState([]);
   const [deleteMsg, setDeleteMsg] = useState();
 
@@ -19,12 +20,6 @@ function All_plant() {
     });
   };
 
-  const updateProduct = (id) => {
-    axios.get("/products/update/" + id).then((response) => {
-      console.log(response);
-    });
-  };
-
   return (
     <Row>
       <h1>My Grocery</h1>
@@ -39,9 +34,14 @@ function All_plant() {
             <button type="button" onClick={() => deleteProduct(item._id)}>
               Delete
             </button>
-            <button type="button" onClick={() => updateProduct(item._id)}>
-              Update
-            </button>
+            <Link to={{ pathname: `/edit`, product }}>
+              <i
+                className="edit alternate outline icon"
+                style={{ color: "blue", marginTop: "7px" }}
+              >
+                Update
+              </i>
+            </Link>
           </Col>
         );
       })}
