@@ -8,6 +8,9 @@ Lets have fun together in this Journey that i will be telling to you, also, if y
 
 (21-05-2021..17:38 friday afternoon in Berlin : )
 
+
+22:52, finishig first day after 5 days of coding without any break :), It was not Easy to apply CRUD with the mix of data base, also, update part is not still possible and i need to find a solution tomorrow. I was proud to be available to connect my Client to my DataBase, also upload photos and recieve the information of my grocery Shop. Tomorrow will be a new day full of new task's but i could make it for sure.
+
 The task:
 
 1-"Create a grocery shopping list. You can add items in the frontend. This data is stored in the backend. The list shows the items. You can create new items, you can delete items and you can modify items. So, if you want to change "tomaeteos" (misspelled) to "tomatoes", you can. All updated are stored in backend."
