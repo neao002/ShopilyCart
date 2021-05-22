@@ -11,6 +11,7 @@ function Add_new() {
   const [picture, setPicture] = useState();
   const [product, setProduct] = useState([]);
   const [deleteMsg, setDeleteMsg] = useState();
+  const [updateData, setData] = useState();
 
   const add = (event) => {
     // event.preventDefault();
@@ -105,6 +106,14 @@ function Add_new() {
             <img
               className="w-50"
               src={`http://localhost:5000/${item.producPic}`}
+            />
+            <input
+              name="name"
+              type="text"
+              placeholder={item.name}
+              onChange={(event) => {
+                setData(event.target.value);
+              }}
             />
             <button type="button" onClick={() => deleteProduct(item._id)}>
               Delete

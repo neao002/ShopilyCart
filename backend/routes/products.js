@@ -42,13 +42,12 @@ router.get("/delete/:id", (req, res) => {
 });
 
 // updating
-router.get("/update/:id", async (req, res) => {
-  const { name, price, descripcion } = req.body;
-  await User.findByIdAndUpdate(req.params.id, {
-    name,
-    price,
-    descripcion,
-  });
+router.patch("/update/:id", async (req, res, next) => {
+  try {
+    const id = req.params.id;
+  } catch (error) {
+    console.log(error.message);
+  }
 });
 
 module.exports = router;

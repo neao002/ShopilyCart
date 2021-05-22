@@ -5,7 +5,11 @@ const Navbar = ({ click }) => {
   return (
     <nav className="navbar">
       <div className="navbar__logo">
-        <Link to="/">ShopiLy</Link>
+        <Link className="mt-5" to="/">
+          <h3 className="footer-left">
+            <span> GrocyShop</span>
+          </h3>
+        </Link>
       </div>
 
       <ul className="navbar__links">
