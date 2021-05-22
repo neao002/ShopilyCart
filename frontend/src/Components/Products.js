@@ -1,5 +1,6 @@
-import { Row, Col, Form, Button, Alert, Container } from "react-bootstrap";
+import { Row, Col, Form, Button, Alert } from "react-bootstrap";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Css/Products.css";
 
@@ -155,9 +156,11 @@ function Add_new() {
               className="w-50"
               src={`http://localhost:5000/${item.producPic}`}
             />
-            <button type="button" onClick={() => updateFood(item._id)}>
-              Update
-            </button>
+            <Link to="/all_Products">
+              <button type="button" onClick={() => updateFood(item._id)}>
+                Update
+              </button>
+            </Link>
             <button type="button" onClick={() => deleteProduct(item._id)}>
               Delete
             </button>

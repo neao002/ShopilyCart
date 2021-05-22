@@ -34,23 +34,15 @@ router.get("/add", (req, res) => {
   });
 });
 
-// updating my products
-
-// router.put("/update/:id", async (req, res) => {
-//   const { name, price, descripcion } = req.body;
-//   await Product.findByIdAndUpdate(req.params.id, {
-//     name,
-//     price,
-//     descripcion,
-//     producPic: "/images/" + req.file.filename,
-//   });
-// });
-
 router.put("/update", async (req, res) => {
   const newProductName = req.body.newProductName;
+  const newPrice = req.body.newPrice;
+  const newDescription = req.body.newDescription;
   const id = req.body.id;
   await Product.findById(id, (err, updatedProduct) => {
     updatedProduct.name = newProductName;
+    updatedProduct.price = newPrice;
+    updatedProduct.descripcion = newDescription;
 
     updatedProduct.save();
     res.send("updated");
