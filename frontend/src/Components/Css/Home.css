@@ -30,6 +30,7 @@ div .container-home h1 {
 
 .imgHome {
   width: 100%;
+  z-index: -1;
 }
 
 #div1 {

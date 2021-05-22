@@ -1,27 +1,11 @@
 /* footer */
 
-footer {
-  width: 100%;
-  height: 30px;
-  display: flex !important;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0 10px;
-  background: rgb(220, 18, 18);
-}
-footer .names {
-  margin: 0;
-}
-
-footer {
-  bottom: 0;
-}
 .footer-distributed {
   background-color: #292c2f;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
+  height: 20% !important;
   text-align: left;
   font: bold 16px sans-serif;
   padding: 55px 50px;

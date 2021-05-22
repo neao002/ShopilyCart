@@ -25,8 +25,9 @@ function App() {
             <AllProducts />
           </Route>
         </Switch>
+
+        <Footer />
       </Container>
-      <Footer />
     </Router>
   );
 }

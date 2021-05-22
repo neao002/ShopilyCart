@@ -1,0 +1,22 @@
+.product-image {
+  background-image: url("https://images.unsplash.com/photo-1597362925123-77861d3fbac7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 95%;
+}
+
+h1 {
+  color: whitesmoke;
+  text-shadow: teal 2px 3px;
+  text-align: center;
+}
+
+.containerForm {
+  position: absolute;
+  width: 100%;
+  margin: 20px;
+}

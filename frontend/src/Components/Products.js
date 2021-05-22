@@ -1,6 +1,7 @@
 import { Row, Col, Form, Button, Alert } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "./Css/Products.css";
 
 function Add_new() {
   const [data, setName] = useState({
@@ -55,10 +56,10 @@ function Add_new() {
 
   return (
     <Row>
-      <Col>
+      <Col className="product-image">
         <h1>Add New Product</h1>
-        <Form onSubmit={add}>
-          <Form.Group controlId="plantName">
+        <Form className="containerForm" onSubmit={add}>
+          <Form.Group className="formProduct" controlId="plantName">
             <Form.Label>Product Name</Form.Label>
             <Form.Control
               name="name"
@@ -66,12 +67,14 @@ function Add_new() {
               placeholder="What is your product name?"
               onChange={(e) => setName({ ...data, name: e.target.value })}
             />
+            <Form.Label>Price</Form.Label>
             <Form.Control
               name="price"
               type="text"
               placeholder="What is the price of your product??"
               onChange={(e) => setName({ ...data, price: e.target.value })}
             />
+            <Form.Label>Describe your product</Form.Label>
             <Form.Control
               name="descripcion"
               type="text"
