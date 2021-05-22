@@ -34,20 +34,38 @@ router.get("/add", (req, res) => {
   });
 });
 
+// updating my products
+
+// router.put("/update/:id", async (req, res) => {
+//   const { name, price, descripcion } = req.body;
+//   await Product.findByIdAndUpdate(req.params.id, {
+//     name,
+//     price,
+//     descripcion,
+//     producPic: "/images/" + req.file.filename,
+//   });
+// });
+
+router.put("/update", async (req, res) => {
+  const newProductName = req.body.newProductName;
+  const id = req.body.id;
+  await Product.findById(id, (err, updatedProduct) => {
+    updatedProduct.name = newProductName;
+
+    updatedProduct.save();
+    res.send("updated");
+  });
+  try {
+  } catch (error) {
+    console.log(err);
+  }
+});
+
 // getting rid of you =)
 router.get("/delete/:id", (req, res) => {
   Product.findByIdAndDelete(req.params.id, (err, doc) => {
     res.json("One product from the data has been deleted!");
   });
-});
-
-// updating
-router.patch("/update/:id", async (req, res, next) => {
-  try {
-    const id = req.params.id;
-  } catch (error) {
-    console.log(error.message);
-  }
 });
 
 module.exports = router;

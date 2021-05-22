@@ -10,7 +10,7 @@
 }
 
 h1 {
-  color: whitesmoke;
+  color: rgb(15, 11, 11);
   text-shadow: teal 2px 3px;
   text-align: center;
 }
@@ -21,7 +21,7 @@ h1 {
 }
 
 h3 .addProduct {
-  color: turquoise;
+  color: rgb(18, 20, 20);
 }
 
 .formProduct {
@@ -32,7 +32,7 @@ h3 .addProduct {
 
 .ButtonAddShop {
   color: violet;
-  margin-left: 60px;
+  margin-left: 150px;
 }
 
 .inputAddPicture {
@@ -43,5 +43,7 @@ h3 .addProduct {
 }
 
 .myProductsContainer {
-  width: 100%;
+  display: flex;
+  border: 1px solid black;
+  width: 100;
 }

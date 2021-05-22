@@ -13,9 +13,8 @@ function All_plant() {
     });
   }, [deleteMsg]);
 
-  const deleteProduct = (id) => {
-    axios.get("/products/delete/" + id).then((response) => {
-      setDeleteMsg(response.data);
+  const updatingProduct = (id) => {
+    axios.get("/products/update/" + id).then((response) => {
       console.log(response.data);
     });
   };
@@ -23,7 +22,7 @@ function All_plant() {
   return (
     <Row>
       <h1>My Grocery</h1>
-      {deleteMsg != null && <Alert variant="success">{deleteMsg}</Alert>}
+
       {product.map((item) => {
         return (
           <Col key={item._id}>
@@ -34,20 +33,39 @@ function All_plant() {
               className="w-50"
               src={`http://localhost:5000/${item.producPic}`}
             />
-            <button type="button" onClick={() => deleteProduct(item._id)}>
-              Delete
+            <div class="form-group">
+              <label>Product Name:</label>
+              <input
+                type="name"
+                name="name"
+                class="form-control"
+                placeholder={item.name}
+              />
+            </div>
+            <div class="form-group">
+              <label>Price</label>
+              <input
+                name="price"
+                type="email"
+                class="form-control"
+                placeholder={item.price}
+              ></input>
+            </div>
+            <div class="form-group">
+              <label>Description</label>
+              <input
+                name="descripcion"
+                type="text"
+                class="form-control"
+                placeholder={item.descripcion}
+              ></input>
+            </div>
+            <button type="button" onClick={() => updatingProduct(item._id)}>
+              Update
             </button>
-            <button type="button">Update</button>
           </Col>
         );
       })}
-      <Col>
-        <h3>Product Name: </h3>
-        <h3>Price </h3>
-        <h3>Description </h3>
-        <img className="w-50" src={``} />
-        <button>Update</button>
-      </Col>
     </Row>
   );
 }
