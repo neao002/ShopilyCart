@@ -15,8 +15,33 @@ h1 {
   text-align: center;
 }
 
-.containerForm {
-  position: absolute;
+.Container-Form {
   width: 100%;
-  margin: 20px;
+  height: 20px;
+}
+
+h3 .addProduct {
+  color: turquoise;
+}
+
+.formProduct {
+  color: black;
+  font-size: 2rem;
+  text-shadow: 2px 2px black;
+}
+
+.ButtonAddShop {
+  color: violet;
+  margin-left: 60px;
+}
+
+.inputAddPicture {
+  color: black;
+  text-shadow: 2px 2px rgb(213, 14, 14);
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+
+.myProductsContainer {
+  width: 100%;
 }

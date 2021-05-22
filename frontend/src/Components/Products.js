@@ -1,4 +1,4 @@
-import { Row, Col, Form, Button, Alert } from "react-bootstrap";
+import { Row, Col, Form, Button, Alert, Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Css/Products.css";
@@ -55,10 +55,12 @@ function Add_new() {
   };
 
   return (
-    <Row>
+    <Row className="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
       <Col className="product-image">
-        <h1>Add New Product</h1>
-        <Form className="containerForm" onSubmit={add}>
+        <h1 className="white-text mb-5 mt-4 font-weight-bold">
+          Add New Product
+        </h1>
+        <Form onSubmit={add}>
           <Form.Group className="formProduct" controlId="plantName">
             <Form.Label>Product Name</Form.Label>
             <Form.Control
@@ -86,13 +88,18 @@ function Add_new() {
           </Form.Group>
           <Form.Group>
             <Form.File
+              className="inputAddPicture"
               id="exampleFormControlFile1"
               label="Upload a Picture"
               onChange={getPic}
               name="producPic"
             />
           </Form.Group>
-          <Button variant="danger" type="submit">
+          <Button
+            className="mt-2 ml-4 ButtonAddShop"
+            variant="success"
+            type="submit"
+          >
             Add to Shop
           </Button>
         </Form>
