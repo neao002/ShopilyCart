@@ -1,5 +1,5 @@
-import { Row, Col, Form, Button } from "react-bootstrap";
-import { useState } from "react";
+import { Row, Col, Form, Button, Alert } from "react-bootstrap";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 function Add_new() {
@@ -9,9 +9,11 @@ function Add_new() {
     descripcion: " ",
   });
   const [picture, setPicture] = useState();
+  const [product, setProduct] = useState([]);
+  const [deleteMsg, setDeleteMsg] = useState();
 
   const add = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     const getProduct = new FormData();
     getProduct.append("name", data.name);
     getProduct.append("price", data.price);
@@ -35,6 +37,21 @@ function Add_new() {
   const getPic = (event) => {
     setPicture(event.target.files[0]);
   };
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/products/add").then((response) => {
+      console.log(response.data);
+      setProduct(response.data);
+    });
+  }, [deleteMsg]);
+
+  const deleteProduct = (id) => {
+    axios.get("/products/delete/" + id).then((response) => {
+      setDeleteMsg(response.data);
+      console.log(response.data);
+    });
+  };
+
   return (
     <Row>
       <Col>
@@ -76,6 +93,33 @@ function Add_new() {
           </Button>
         </Form>
       </Col>
+
+      <h1>My Products</h1>
+      {deleteMsg != null && <Alert variant="success">{deleteMsg}</Alert>}
+      {product.map((item) => {
+        return (
+          <Col key={item._id}>
+            <h3>Product Name: {item.name}</h3>
+            <h3>Price {item.price}$</h3>
+            <h3>Description : {item.descripcion}</h3>
+            <img
+              className="w-50"
+              src={`http://localhost:5000/${item.producPic}`}
+            />
+            <button type="button" onClick={() => deleteProduct(item._id)}>
+              Delete
+            </button>
+            <button type="button">Update</button>
+          </Col>
+        );
+      })}
+      {/* <Col>
+        <h3>Product Name: </h3>
+        <h3>Price </h3>
+        <h3>Description </h3>
+        <img className="w-50" src={``} />
+        <button>Update</button>
+      </Col> */}
     </Row>
   );
 }

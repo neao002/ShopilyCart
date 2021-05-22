@@ -2,7 +2,7 @@ import { Row, Col, Alert } from "react-bootstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-function All_plant(props) {
+function All_plant() {
   const [product, setProduct] = useState([]);
   const [deleteMsg, setDeleteMsg] = useState();
 
@@ -30,21 +30,24 @@ function All_plant(props) {
             <h3>Product Name: {item.name}</h3>
             <h3>Price {item.price}$</h3>
             <h3>Description : {item.descripcion}</h3>
-            <img src={`http://localhost:5000/${item.producPic}`} />
+            <img
+              className="w-50"
+              src={`http://localhost:5000/${item.producPic}`}
+            />
             <button type="button" onClick={() => deleteProduct(item._id)}>
               Delete
             </button>
-            <Link to={{ pathname: `/edit`, product }}>
-              <i
-                className="edit alternate outline icon"
-                style={{ color: "blue", marginTop: "7px" }}
-              >
-                Update
-              </i>
-            </Link>
+            <button type="button">Update</button>
           </Col>
         );
       })}
+      <Col>
+        <h3>Product Name: </h3>
+        <h3>Price </h3>
+        <h3>Description </h3>
+        <img className="w-50" src={``} />
+        <button>Update</button>
+      </Col>
     </Row>
   );
 }
