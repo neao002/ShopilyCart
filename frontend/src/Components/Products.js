@@ -1,4 +1,4 @@
-import { Row, Col, Form, Button, Alert } from "react-bootstrap";
+import { Row, Col, Form, Button, Alert, Card } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -76,8 +76,8 @@ function Add_new() {
     <Row className=" rgba-stylish-strong py-5 px-5 z-depth-4">
       <Col className="product-image">
         <h1 className="white-text font-weight-bold">Add New Product</h1>
-        <Form onSubmit={add}>
-          <Form.Group className="formProduct" controlId="plantName">
+        <Form className="formProduct" onSubmit={add}>
+          <Form.Group controlId="plantName">
             <Form.Label>Product Name</Form.Label>
             <Form.Control
               name="name"
@@ -124,38 +124,21 @@ function Add_new() {
       <h1>My Products</h1>
       {product.map((item) => {
         return (
-          <Col key={item._id}>
-            <h3>Product Name: {item.name}</h3>
-            <input
-              name="name"
-              type="text"
-              placeholder="New Product Name"
-              onChange={(e) => {
-                setProductName(e.target.value);
-              }}
-            />
-            <h3>Price {item.price}$</h3>
-            <input
-              name="price"
-              type="text"
-              placeholder="Fix your Price"
-              onChange={(e) => {
-                setProductName(e.target.value);
-              }}
-            />
-            <h3>Description : {item.descripcion}</h3>
-            <input
-              name="name"
-              type="text"
-              placeholder="Fix your description"
-              onChange={(e) => {
-                setProductName(e.target.value);
-              }}
-            />
-            <img
-              className="w-50"
+          <Card style={{ width: "18rem" }}>
+            <Card.Img
+              variant="top"
               src={`http://localhost:5000/${item.producPic}`}
             />
+            <Card.Body>
+              <Card.Title>
+                <h3>Product Name:</h3>
+                <h4>{item.name}</h4>
+              </Card.Title>
+              <h3>Price</h3>
+              <Card.Text>{item.price}$</Card.Text>
+              <h3>Description:</h3>
+              <Card.Text>{item.descripcion}</Card.Text>
+            </Card.Body>
             <Link to="/all_Products">
               <button type="button" onClick={() => updateFood(item._id)}>
                 Update
@@ -164,7 +147,7 @@ function Add_new() {
             <button type="button" onClick={() => deleteProduct(item._id)}>
               Delete
             </button>
-          </Col>
+          </Card>
         );
       })}
     </Row>

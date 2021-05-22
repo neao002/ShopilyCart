@@ -1,7 +1,9 @@
-import { Row, Col, Alert } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import "./Css/AllProducts.css";
+
 function All_plant() {
   const [product, setProduct] = useState([]);
   const [newProductName, setProductName] = useState([]);
@@ -25,13 +27,64 @@ function All_plant() {
   };
 
   return (
-    <Row>
+    <Row className="container-allproducts allproducts-image">
       <h1>My Grocery</h1>
 
       {product.map((item) => {
         return (
-          <Col key={item._id}>
-            <h3>Product Name: {item.name}</h3>
+          <Card key={item._id} style={{ width: "18rem" }}>
+            <Card.Img
+              variant="top"
+              src={`http://localhost:5000/${item.producPic}`}
+            />
+            <Card.Body>
+              <Card.Title>
+                <h3>Product Name:</h3>
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="New Product Name"
+                  onChange={(e) => {
+                    setProductName(e.target.value);
+                  }}
+                />
+              </Card.Title>
+              <h3>Price</h3>
+
+              <input
+                name="price"
+                type="text"
+                placeholder="Fix your Price"
+                onChange={(e) => {
+                  setNewPrice(e.target.value);
+                }}
+              />
+              <h3>Description:</h3>
+              <input
+                name="descripcion"
+                type="text"
+                placeholder="Fix your description"
+                onChange={(e) => {
+                  setNewDescription(e.target.value);
+                }}
+              />
+            </Card.Body>
+            <Link to="/all_Products">
+              <button type="button" onClick={() => updateFood(item._id)}>
+                Update
+              </button>
+            </Link>
+          </Card>
+        );
+      })}
+    </Row>
+  );
+}
+
+export default All_plant;
+
+{
+  /* <h3>Product Name: {item.name}</h3>
             <input
               name="name"
               type="text"
@@ -61,17 +114,5 @@ function All_plant() {
             <img
               className="w-50"
               src={`http://localhost:5000/${item.producPic}`}
-            />
-            <Link to="/add_Products">
-              <button type="button" onClick={() => updateFood(item._id)}>
-                Update
-              </button>
-            </Link>
-          </Col>
-        );
-      })}
-    </Row>
-  );
+            /> */
 }
-
-export default All_plant;

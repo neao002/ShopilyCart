@@ -1,0 +1,21 @@
+.allproducts-image {
+  background-image: url("https://images.unsplash.com/photo-1477506252414-b2954dbdacf3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+  background-color: #cccccc;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 80%;
+}
+
+.container-allproducts {
+  display: flex;
+  position: sticky;
+  margin-left: 10%;
+  margin-top: 2%;
+}
+
+.card {
+  background-color: cadetblue;
+}

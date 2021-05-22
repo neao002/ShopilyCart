@@ -3,6 +3,8 @@ const Product = require("../models/products");
 
 const multer = require("multer");
 
+// config for my picture
+
 const storage = multer.diskStorage({
   destination: function (req, file, callback) {
     callback(null, "public/images");
@@ -33,6 +35,8 @@ router.get("/add", (req, res) => {
     res.json(docs);
   });
 });
+
+// updating data
 
 router.put("/update", async (req, res) => {
   const newProductName = req.body.newProductName;
