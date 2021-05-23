@@ -59,10 +59,10 @@ function Add_new({ updating }) {
   // updating product
 
   return (
-    <Row className=" rgba-stylish-strong py-5 px-5 z-depth-4">
+    <div className="container-new-product  rgba-stylish-strong py-5 px-5 z-depth-4">
       <Col className="product-image">
         <h1 className="white-text font-weight-bold">Add New Product</h1>
-        <Form className="formProduct" onSubmit={add}>
+        <Form className=" formProduct" onSubmit={add}>
           <Form.Group>
             <Form.Label>Importancy</Form.Label>
             <Form.Control
@@ -117,21 +117,28 @@ function Add_new({ updating }) {
       <h1 className="mt-5">My Products</h1>
       {product.map((item) => {
         return (
-          <Card className="mx-3" style={{ width: "18rem" }}>
+          <Card
+            className="bg-success text-center mx-3"
+            style={{ width: "18rem" }}
+          >
             <Card.Body>
               <Card.Title>
-                <h3>Product Name:</h3>
+                <h3 className="text-white">Product Name:</h3>
                 <h4>{item.productName}</h4>
               </Card.Title>
-              <h3>Price</h3>
-              <Card.Text>{item.price}$</Card.Text>
-              <h3>Description:</h3>
-              <Card.Text>{item.descripcion}</Card.Text>
+              <Card.Title>
+                <h3 className="text-white">Price</h3>
+                <Card.Text>{item.price}$</Card.Text>
+              </Card.Title>
+              <Card.Title>
+                <h3 className="text-white">Description:</h3>
+                <Card.Text>{item.descripcion}</Card.Text>
+              </Card.Title>
             </Card.Body>
 
-            <button className="btn btn-warning">
+            <Button className="buttonUpdate btn btn-warning">
               <Link to={`/update/${item._id}`}>Update</Link>
-            </button>
+            </Button>
 
             <Button type="button" onClick={() => deleteProduct(item._id)}>
               Delete
@@ -139,7 +146,7 @@ function Add_new({ updating }) {
           </Card>
         );
       })}
-    </Row>
+    </div>
   );
 }
 

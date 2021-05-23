@@ -1,0 +1,28 @@
+.formUpdate {
+  color: black;
+  font-size: 3rem;
+  text-shadow: 3px 3px rgb(6, 224, 232);
+  width: 50%;
+  margin-left: 30%;
+  margin-bottom: 20%;
+  margin-top: 7%;
+
+  padding: 5%;
+}
+
+.update-image {
+  background-image: url("https://images.unsplash.com/photo-1543364195-bfe6e4932397?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80");
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-right: 5%;
+}
+
+.ButtonAddUpdate {
+  margin-left: 30% !important;
+  font-size: 2rem;
+  color: blueviolet;
+}

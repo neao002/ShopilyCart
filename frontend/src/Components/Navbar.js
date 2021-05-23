@@ -12,7 +12,7 @@ const Navbar = ({ click }) => {
         </h3>
       </div>
 
-      <ul className="navbar__links">
+      <ul className="navbar__links mr-3">
         <li>
           <Link to="/add_Products" className="cart__link">
             <i className="fas fa-shopping-cart"></i>
@@ -20,7 +20,7 @@ const Navbar = ({ click }) => {
           </Link>
         </li>
         <li className="cart__link">
-          <Link to="/all_Products">Shop</Link>
+          <Link to="/update/:id">Update</Link>
         </li>
       </ul>
 

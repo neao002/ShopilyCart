@@ -6,18 +6,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  width: 95%;
-}
-
-.product-image-products {
-  background-image: url("https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80");
-  background-color: #cccccc;
-  height: 500px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  width: 95%;
+  margin-right: 5%;
 }
 
 h1 {
@@ -41,12 +30,14 @@ h3 .addProduct {
   text-shadow: 3px 3px rgb(6, 224, 232);
   width: 50%;
   margin-left: 30%;
+  margin-bottom: 20%;
+  text-align: center;
 }
 
 .ButtonAddShop {
   color: rgb(238, 15, 238);
-  margin-left: 150px;
-  font-size: 2rem;
+
+  font-size: 1.8rem;
 }
 
 .inputAddPicture {
@@ -59,11 +50,9 @@ h3 .addProduct {
 .myProductsContainer {
   display: flex;
   border: 1px solid black;
-  width: 100;
+  width: 100%;
 }
 
-.formProduct {
-  border: 5px solid black;
-  margin-bottom: auto;
-  padding: auto;
+.buttonUpdate a {
+  text-decoration: none !important;
 }

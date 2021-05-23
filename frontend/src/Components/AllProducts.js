@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./Css/AllProducts.css";
 
-function All_plant() {
+function Shop() {
   const [product, setProduct] = useState([]);
   const [newProductName, setProductName] = useState("");
   const [newPrice, setNewPrice] = useState("");
@@ -34,15 +34,11 @@ function All_plant() {
 
   return (
     <Row className="container-allproducts allproducts-image">
-      <h1>My Grocery</h1>
+      <h1>My Grocerys</h1>
 
       {product.map((item) => {
         return (
           <Card key={item._id} style={{ width: "18rem" }}>
-            {/* <Card.Img
-              variant="top"
-              src={`http://localhost:5000/${item.producPic}`}
-            /> */}
             <Card.Body>
               <Card.Title>
                 <h3>Product Name:</h3>
@@ -92,4 +88,4 @@ function All_plant() {
   );
 }
 
-export default All_plant;
+export default Shop;

@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
+import "./Css/update.css";
 
 import axios from "axios";
 import { useHistory, useRouteMatch } from "react-router";
@@ -55,8 +56,8 @@ function Update() {
   }, []);
   console.log(updateItem);
   return (
-    <div>
-      <Form className="formProduct" onSubmit={updateGroceryItem}>
+    <div className="update-image mt-5">
+      <Form className="formUpdate mt-5" onSubmit={updateGroceryItem}>
         <Form.Group>
           <Form.Label>Product Name</Form.Label>
           <Form.Control
@@ -91,8 +92,8 @@ function Update() {
         </Form.Group>
 
         <Button
-          className="mt-2 ml-4 ButtonAddShop"
-          variant="success"
+          className=" mt-2 ml-4 ButtonAddUpdate"
+          variant="warning"
           type="submit"
         >
           Update

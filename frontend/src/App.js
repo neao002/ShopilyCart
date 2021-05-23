@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./Components/Navbar";
 import Products from "./Components/Products";
-// import AllProducts from "./Components/AllProducts";
+
 import Home from "./Components/Home";
 import Update from "./Components/Update";
 import Footer from "./Components/Footer";
