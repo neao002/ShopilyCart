@@ -1,4 +1,4 @@
-import { Row, Col, Form, Button, Alert, Card } from "react-bootstrap";
+import { Row, Col, Form, Button, Alert, Card, CardDeck } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -55,8 +55,6 @@ function Add_new({ updating }) {
       updating();
     });
   };
-
-  // updating product
 
   return (
     <div className="container-new-product  rgba-stylish-strong py-5 px-5 z-depth-4">
@@ -117,33 +115,35 @@ function Add_new({ updating }) {
       <h1 className="mt-5">My Products</h1>
       {product.map((item) => {
         return (
-          <Card
-            className="bg-success text-center mx-3"
-            style={{ width: "18rem" }}
-          >
-            <Card.Body>
-              <Card.Title>
-                <h3 className="text-white">Product Name:</h3>
-                <h4>{item.productName}</h4>
-              </Card.Title>
-              <Card.Title>
-                <h3 className="text-white">Price</h3>
-                <Card.Text>{item.price}$</Card.Text>
-              </Card.Title>
-              <Card.Title>
-                <h3 className="text-white">Description:</h3>
-                <Card.Text>{item.descripcion}</Card.Text>
-              </Card.Title>
-            </Card.Body>
+          <CardDeck>
+            <Card
+              className=" mb-5 bg-success text-center"
+              style={{ width: "18rem" }}
+            >
+              <Card.Body>
+                <Card.Title>
+                  <h3 className="text-white">Product Name:</h3>
+                  <h4>{item.productName}</h4>
+                </Card.Title>
+                <Card.Title>
+                  <h3 className="text-white">Price</h3>
+                  <Card.Text>{item.price}$</Card.Text>
+                </Card.Title>
+                <Card.Title>
+                  <h3 className="text-white">Description:</h3>
+                  <Card.Text>{item.descripcion}</Card.Text>
+                </Card.Title>
+              </Card.Body>
 
-            <Button className="buttonUpdate btn btn-warning">
-              <Link to={`/update/${item._id}`}>Update</Link>
-            </Button>
+              <Button className="buttonUpdate btn btn-warning">
+                <Link to={`/update/${item._id}`}>Update</Link>
+              </Button>
 
-            <Button type="button" onClick={() => deleteProduct(item._id)}>
-              Delete
-            </Button>
-          </Card>
+              <Button type="button" onClick={() => deleteProduct(item._id)}>
+                Delete
+              </Button>
+            </Card>
+          </CardDeck>
         );
       })}
     </div>
