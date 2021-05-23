@@ -6,6 +6,7 @@ const login = new Schema({
   price: String,
   descripcion: String,
   producPic: String,
+  importance: String,
 });
 
 const Product = mongoose.model("Product", login);

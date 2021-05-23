@@ -1,24 +1,11 @@
 const router = require("express").Router();
 const Product = require("../models/products");
 
-const multer = require("multer");
+// ading new product
 
-// config for my picture
-
-const storage = multer.diskStorage({
-  destination: function (req, file, callback) {
-    callback(null, "public/images");
-  },
-  filename: function (req, file, callback) {
-    callback(null, Date.now() + "_" + file.originalname);
-  },
-});
-const upload = multer({ storage });
-
-// ading new product but also a picture
-
-router.post("/add", upload.single("producPic"), (req, res) => {
+router.post("/add", (req, res) => {
   const newProduct = new Product({
+    importante: req.body.importance,
     productName: req.body.productName,
     price: req.body.price,
     descripcion: req.body.descripcion,
@@ -36,25 +23,6 @@ router.get("/add", (req, res) => {
 
 // updating data
 
-// router.put("/update", async (req, res) => {
-//   const newProductName = req.body.newProductName;
-//   const newPrice = req.body.newPrice;
-//   const newDescription = req.body.newDescription;
-//   const id = req.body.id;
-//   await Product.findById(id, (err, updatedProduct) => {
-//     updatedProduct.name = newProductName;
-//     updatedProduct.price = newPrice;
-//     updatedProduct.descripcion = newDescription;
-
-//     updatedProduct.save();
-//     res.send("updated");
-//   });
-//   try {
-//   } catch (error) {
-//     console.log(err);
-//   }
-// });
-
 router.get("/update/:id", (req, res) => {
   const updateId = req.params.id;
   Product.findById(updateId, (err, shopItem) => {
@@ -70,6 +38,7 @@ router.post("/updatedshop/:id", (req, res) => {
       productName: req.body.productName,
       price: req.body.price,
       descripcion: req.body.descripcion,
+      importance: req.body.importance,
     },
     (err, updatedItem) => {
       if (updatedItem) {

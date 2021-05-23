@@ -6,6 +6,7 @@ import "./Css/Products.css";
 
 function Add_new({ updating }) {
   const [data, setName] = useState({
+    importance: "",
     productName: "",
     price: "",
     descripcion: " ",
@@ -63,6 +64,19 @@ function Add_new({ updating }) {
         <h1 className="white-text font-weight-bold">Add New Product</h1>
         <Form className="formProduct" onSubmit={add}>
           <Form.Group>
+            <Form.Label>Importancy</Form.Label>
+            <Form.Control
+              as="select"
+              name="importance"
+              defaultValue="1 - Very Much Important"
+              onChange={(e) => setName({ ...data, importance: e.target.value })}
+            >
+              <option value="1">1 - Very Much Important</option>
+              <option value="2">2 - Very Important</option>
+              <option value="3">3 - Important</option>
+              <option value="4">4 - Not Important</option>
+              <option value="5">5 - Not Important At All</option>
+            </Form.Control>
             <Form.Label>Product Name</Form.Label>
             <Form.Control
               name="productName"
