@@ -4,44 +4,36 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Css/Products.css";
 
-function Add_new() {
+function Add_new({ updating }) {
   const [data, setName] = useState({
     productName: "",
     price: "",
     descripcion: " ",
   });
-  const [picture, setPicture] = useState();
+
   const [product, setProduct] = useState([]);
   const [deleteMsg, setDeleteMsg] = useState();
 
   // appending and sending data to back-end
 
   const add = (event) => {
-    // event.preventDefault();
-    const getProduct = new FormData();
-    getProduct.append("productName", data.productName);
-    getProduct.append("price", data.price);
-    getProduct.append("descripcion", data.descripcion);
-
-    getProduct.append("producPic", picture);
-
+    event.preventDefault();
+    const jsonData = JSON.stringify(data);
+    console.log(data);
     const config = {
       headers: {
-        "content-type": "multipart/form-data",
+        "Content-Type": "application/json; charset=UTF-8",
+        Accept: "Token",
+        "Access-Control-Allow-Origin": "*",
       },
     };
 
     axios
-      .post("http://localhost:5000/products/add", getProduct, config)
+      .post("http://localhost:5000/products/add", jsonData, config)
       .then((response) => {
         console.log(response.data);
+        updating();
       });
-  };
-
-  // geting mypic
-
-  const getPic = (event) => {
-    setPicture(event.target.files[0]);
   };
 
   // getting and fetching my data
@@ -51,7 +43,7 @@ function Add_new() {
       console.log(response.data);
       setProduct(response.data);
     });
-  }, [deleteMsg]);
+  }, [updating]);
 
   // deleting my product from data base and browser
 
@@ -59,6 +51,7 @@ function Add_new() {
     axios.get("/products/delete/" + id).then((response) => {
       setDeleteMsg(response.data);
       console.log(response.data);
+      updating();
     });
   };
 
@@ -96,15 +89,7 @@ function Add_new() {
               }
             />
           </Form.Group>
-          <Form.Group>
-            <Form.File
-              className="inputAddPicture"
-              id="exampleFormControlFile1"
-              label="Upload a Picture"
-              onChange={getPic}
-              name="producPic"
-            />
-          </Form.Group>
+
           <Button
             className="mt-2 ml-4 ButtonAddShop"
             variant="success"
@@ -115,14 +100,10 @@ function Add_new() {
         </Form>
       </Col>
       {deleteMsg != null && <Alert variant="success">{deleteMsg}</Alert>}
-      <h1 className="mt-5 product-image-products">My Products</h1>
+      <h1 className="mt-5">My Products</h1>
       {product.map((item) => {
         return (
-          <Card style={{ width: "18rem" }}>
-            <Card.Img
-              variant="top"
-              src={`http://localhost:5000/${item.producPic}`}
-            />
+          <Card className="mx-3" style={{ width: "18rem" }}>
             <Card.Body>
               <Card.Title>
                 <h3>Product Name:</h3>
@@ -133,14 +114,14 @@ function Add_new() {
               <h3>Description:</h3>
               <Card.Text>{item.descripcion}</Card.Text>
             </Card.Body>
-            <Link to="/all_Products">
-              {/* <button type="button" onClick={() => updateFood(item._id)}>
-                Update
-              </button> */}
-            </Link>
-            <button type="button" onClick={() => deleteProduct(item._id)}>
-              Delete
+
+            <button className="btn btn-warning">
+              <Link to={`/update/${item._id}`}>Update</Link>
             </button>
+
+            <Button type="button" onClick={() => deleteProduct(item._id)}>
+              Delete
+            </Button>
           </Card>
         );
       })}

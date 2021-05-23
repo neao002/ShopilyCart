@@ -1,6 +1,6 @@
-import { Row, Col, Card } from "react-bootstrap";
+import { Row, Card } from "react-bootstrap";
 import axios from "axios";
-import { Link } from "react-router-dom";
+
 import { useEffect, useState } from "react";
 import "./Css/AllProducts.css";
 

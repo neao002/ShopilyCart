@@ -1,7 +1,7 @@
 {
   "name": "todoappfullmern",
   "version": "1.0.0",
-  "description": "",
+  "description": "The following coding challenge has been giving by Michael Leutelt, one of the founders of IT Active Recruitment with the final goal to learn new way of coding alternative and real apps, apply what we've learn during this intensive web development course, and also to be available to do our Final Project and Intership with this interesting company that its giving us the change to be part of.",
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"npm start --prefix backend\"   \"npm start --prefix frontend\" "
@@ -10,5 +10,13 @@
   "license": "ISC",
   "dependencies": {
     "concurrently": "^6.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neao002/ShopilyCart.git"
+  },
+  "bugs": {
+    "url": "https://github.com/neao002/ShopilyCart/issues"
+  },
+  "homepage": "https://github.com/neao002/ShopilyCart#readme"
 }
