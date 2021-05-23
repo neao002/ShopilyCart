@@ -20,7 +20,7 @@ const upload = multer({ storage });
 router.post("/add", upload.single("producPic"), (req, res) => {
   console.log(req.body, req.file);
   const newProduct = new Product({
-    name: req.body.name,
+    productName: req.body.productName,
     price: req.body.price,
     descripcion: req.body.descripcion,
     producPic: "/images/" + req.file.filename,

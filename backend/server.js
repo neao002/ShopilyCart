@@ -15,10 +15,6 @@ app.use(express.json());
 
 app.use("/products", productRouter);
 
-app.get("*", (req, res) => {
-  res.render("error");
-});
-
 app.listen(PORT, () => {
   console.log("Backend is running on port" + PORT);
 });

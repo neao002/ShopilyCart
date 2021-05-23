@@ -10,8 +10,8 @@
 }
 
 h1 {
-  color: rgb(15, 11, 11);
-  text-shadow: teal 2px 3px;
+  color: rgb(247, 237, 237);
+  text-shadow: teal 4px 3px;
   text-align: center;
 }
 
@@ -21,20 +21,21 @@ h1 {
 }
 
 h3 .addProduct {
-  color: rgb(18, 20, 20);
+  color: rgb(8, 228, 228);
 }
 
 .formProduct {
   color: black;
   font-size: 2rem;
-  text-shadow: 2px 2px black;
+  text-shadow: 3px 3px rgb(6, 224, 232);
   width: 50%;
   margin-left: 30%;
 }
 
 .ButtonAddShop {
-  color: violet;
+  color: rgb(238, 15, 238);
   margin-left: 150px;
+  font-size: 2rem;
 }
 
 .inputAddPicture {

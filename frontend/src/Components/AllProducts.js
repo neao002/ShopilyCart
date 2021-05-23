@@ -6,9 +6,9 @@ import "./Css/AllProducts.css";
 
 function All_plant() {
   const [product, setProduct] = useState([]);
-  const [newProductName, setProductName] = useState([]);
-  const [newPrice, setNewPrice] = useState([]);
-  const [newDescription, setNewDescription] = useState([]);
+  const [newProductName, setProductName] = useState("");
+  const [newPrice, setNewPrice] = useState("");
+  const [newDescription, setNewDescription] = useState("");
 
   useEffect(() => {
     axios.get("http://localhost:5000/products/add").then((response) => {
@@ -26,6 +26,12 @@ function All_plant() {
     });
   };
 
+  const deleteProduct = (id) => {
+    axios.get("/products/delete/" + id).then((response) => {
+      console.log(response.data);
+    });
+  };
+
   return (
     <Row className="container-allproducts allproducts-image">
       <h1>My Grocery</h1>
@@ -33,15 +39,16 @@ function All_plant() {
       {product.map((item) => {
         return (
           <Card key={item._id} style={{ width: "18rem" }}>
-            <Card.Img
+            {/* <Card.Img
               variant="top"
               src={`http://localhost:5000/${item.producPic}`}
-            />
+            /> */}
             <Card.Body>
               <Card.Title>
                 <h3>Product Name:</h3>
+                {item.productName}
                 <input
-                  name="name"
+                  name="productName"
                   type="text"
                   placeholder="New Product Name"
                   onChange={(e) => {
@@ -50,7 +57,7 @@ function All_plant() {
                 />
               </Card.Title>
               <h3>Price</h3>
-
+              {item.price}
               <input
                 name="price"
                 type="text"
@@ -60,6 +67,7 @@ function All_plant() {
                 }}
               />
               <h3>Description:</h3>
+              {item.descripcion}
               <input
                 name="descripcion"
                 type="text"
@@ -69,11 +77,14 @@ function All_plant() {
                 }}
               />
             </Card.Body>
-            <Link to="/all_Products">
-              <button type="button" onClick={() => updateFood(item._id)}>
-                Update
-              </button>
-            </Link>
+
+            <button type="button" onClick={() => updateFood(item._id)}>
+              Update
+            </button>
+
+            <button type="button" onClick={() => deleteProduct(item._id)}>
+              Delete
+            </button>
           </Card>
         );
       })}
@@ -82,37 +93,3 @@ function All_plant() {
 }
 
 export default All_plant;
-
-{
-  /* <h3>Product Name: {item.name}</h3>
-            <input
-              name="name"
-              type="text"
-              placeholder="New Product Name"
-              onChange={(e) => {
-                setProductName(e.target.value);
-              }}
-            />
-            <h3>Price {item.price}$</h3>
-            <input
-              name="price"
-              type="text"
-              placeholder="Fix your Price"
-              onChange={(e) => {
-                setNewPrice(e.target.value);
-              }}
-            />
-            <h3>Description : {item.descripcion}</h3>
-            <input
-              name="descripcion"
-              type="text"
-              placeholder="Fix your description"
-              onChange={(e) => {
-                setNewDescription(e.target.value);
-              }}
-            />
-            <img
-              className="w-50"
-              src={`http://localhost:5000/${item.producPic}`}
-            /> */
-}

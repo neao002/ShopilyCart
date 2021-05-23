@@ -6,21 +6,20 @@ import "./Css/Products.css";
 
 function Add_new() {
   const [data, setName] = useState({
-    name: "",
+    productName: "",
     price: "",
     descripcion: " ",
   });
   const [picture, setPicture] = useState();
   const [product, setProduct] = useState([]);
   const [deleteMsg, setDeleteMsg] = useState();
-  const [newProductName, setProductName] = useState([]);
 
   // appending and sending data to back-end
 
   const add = (event) => {
     // event.preventDefault();
     const getProduct = new FormData();
-    getProduct.append("name", data.name);
+    getProduct.append("productName", data.productName);
     getProduct.append("price", data.price);
     getProduct.append("descripcion", data.descripcion);
 
@@ -65,13 +64,6 @@ function Add_new() {
 
   // updating product
 
-  const updateFood = (id) => {
-    axios.put("http://localhost:5000/products/update", {
-      id: id,
-      newProductName: newProductName,
-    });
-  };
-
   return (
     <Row className=" rgba-stylish-strong py-5 px-5 z-depth-4">
       <Col className="product-image">
@@ -80,10 +72,12 @@ function Add_new() {
           <Form.Group controlId="plantName">
             <Form.Label>Product Name</Form.Label>
             <Form.Control
-              name="name"
+              name="productName"
               type="text"
               placeholder="What is your product name?"
-              onChange={(e) => setName({ ...data, name: e.target.value })}
+              onChange={(e) =>
+                setName({ ...data, productName: e.target.value })
+              }
             />
             <Form.Label>Price</Form.Label>
             <Form.Control
@@ -132,7 +126,7 @@ function Add_new() {
             <Card.Body>
               <Card.Title>
                 <h3>Product Name:</h3>
-                <h4>{item.name}</h4>
+                <h4>{item.productName}</h4>
               </Card.Title>
               <h3>Price</h3>
               <Card.Text>{item.price}$</Card.Text>
@@ -140,9 +134,9 @@ function Add_new() {
               <Card.Text>{item.descripcion}</Card.Text>
             </Card.Body>
             <Link to="/all_Products">
-              <button type="button" onClick={() => updateFood(item._id)}>
+              {/* <button type="button" onClick={() => updateFood(item._id)}>
                 Update
-              </button>
+              </button> */}
             </Link>
             <button type="button" onClick={() => deleteProduct(item._id)}>
               Delete

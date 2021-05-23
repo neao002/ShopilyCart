@@ -7,7 +7,7 @@ import NavBar from "./Components/Navbar";
 import Products from "./Components/Products";
 import AllProducts from "./Components/AllProducts";
 import Home from "./Components/Home";
-import Footer from "./Components/Footer";
+// import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
           </Route>
         </Switch>
 
-        <Footer />
+        {/* <Footer /> */}
       </Container>
     </Router>
   );
