@@ -7,7 +7,7 @@ const Navbar = ({ click }) => {
       <div className="navbar__logo">
         <h3>
           <a className="home" href="/">
-            Shoppy
+            GrocyShop
           </a>
         </h3>
       </div>
@@ -19,7 +19,7 @@ const Navbar = ({ click }) => {
             <span>Cart</span>
           </Link>
         </li>
-        <li>
+        <li className="cart__link">
           <Link to="/all_Products">Shop</Link>
         </li>
       </ul>

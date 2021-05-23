@@ -8,7 +8,6 @@
   height: 20% !important;
   text-align: left;
   font: bold 16px sans-serif;
-  padding: 55px 50px;
 }
 
 .footer-distributed .footer-left,
@@ -16,6 +15,11 @@
 .footer-distributed .footer-right {
   display: inline-block;
   vertical-align: top;
+}
+
+.footer-left h3 span {
+  color: #e90678 !important;
+  margin-left: 10px;
 }
 
 .footer-distributed .footer-left {
@@ -43,13 +47,14 @@
   line-height: 1.8;
   text-decoration: none;
   color: inherit;
+  margin-left: 10px;
 }
 
 .footer-distributed .footer-company-name {
   color: #8f9296;
   font-size: 14px;
   font-weight: normal;
-  margin: 0;
+  margin-left: 10px;
 }
 
 .footer-distributed .footer-center {

@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const productRouter = require("./routes/products");
+app.use(express.json());
 const cors = require("cors");
 require("dotenv").config();
 
@@ -10,8 +11,6 @@ const PORT = process.env.PORT;
 app.use(express.static(__dirname + "/public"));
 
 app.use(cors());
-
-app.use(express.json());
 
 app.use("/products", productRouter);
 

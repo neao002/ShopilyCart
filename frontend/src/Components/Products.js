@@ -69,7 +69,7 @@ function Add_new() {
       <Col className="product-image">
         <h1 className="white-text font-weight-bold">Add New Product</h1>
         <Form className="formProduct" onSubmit={add}>
-          <Form.Group controlId="plantName">
+          <Form.Group>
             <Form.Label>Product Name</Form.Label>
             <Form.Control
               name="productName"
@@ -115,7 +115,7 @@ function Add_new() {
         </Form>
       </Col>
       {deleteMsg != null && <Alert variant="success">{deleteMsg}</Alert>}
-      <h1>My Products</h1>
+      <h1 className="mt-5 product-image-products">My Products</h1>
       {product.map((item) => {
         return (
           <Card style={{ width: "18rem" }}>

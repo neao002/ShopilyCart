@@ -9,6 +9,11 @@ div .container-home {
   width: 100%;
 }
 
+.navbar__logo a {
+  color: #e90678 !important;
+  text-decoration: none;
+}
+
 div .container-home h1 {
   font-size: 3rem;
   font-weight: 900;
