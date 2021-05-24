@@ -14,6 +14,6 @@ app.use(cors());
 
 app.use("/products", productRouter);
 
-app.listen(PORT, () => {
+app.listen(PORT || 5000, () => {
   console.log("Backend is running on port" + PORT);
 });

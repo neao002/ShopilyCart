@@ -57,4 +57,14 @@ router.get("/delete/:id", (req, res) => {
   });
 });
 
+router.get("/read", (req, res) => {
+  Product.find({}, (err, result) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
 module.exports = router;
