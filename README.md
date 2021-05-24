@@ -10,6 +10,8 @@ Lets have fun together in this Journey that i will be telling to you, also, if y
 (24-05-2021...21:49 monday night, finishing this long journy but also one that brought me many new important learning on my new path career live)
 
 
+checkout website: https://neao002.github.io/ShopilyCart/
+
 The task:
 
 1-"Create a grocery shopping list. You can add items in the frontend. This data is stored in the backend. The list shows the items. You can create new items, you can delete items and you can modify items. So, if you want to change "tomaeteos" (misspelled) to "tomatoes", you can. All updated are stored in backend."
