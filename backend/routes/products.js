@@ -35,10 +35,10 @@ router.post("/updatedshop/:id", (req, res) => {
   Product.findByIdAndUpdate(
     updateId,
     {
+      importance: req.body.importance,
       productName: req.body.productName,
       price: req.body.price,
       descripcion: req.body.descripcion,
-      importance: req.body.importance,
     },
     (err, updatedItem) => {
       if (updatedItem) {

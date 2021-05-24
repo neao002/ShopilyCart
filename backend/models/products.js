@@ -2,11 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const login = new Schema({
+  importance: Number,
   productName: String,
   price: String,
   descripcion: String,
-  producPic: String,
-  importance: String,
 });
 
 const Product = mongoose.model("Product", login);

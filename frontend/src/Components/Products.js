@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Css/Products.css";
 
-function Add_new({ updating }) {
+function Addnewproduct({ updating }) {
   const [data, setName] = useState({
     importance: 1,
     productName: "",
     price: "",
-    descripcion: " ",
+    descripcion: "",
   });
 
   const [product, setProduct] = useState([]);
@@ -17,7 +17,7 @@ function Add_new({ updating }) {
 
   // appending and sending data to back-end
 
-  const add = (event) => {
+  const addGrocery = (event) => {
     event.preventDefault();
     const jsonData = JSON.stringify(data);
     console.log(data);
@@ -41,6 +41,18 @@ function Add_new({ updating }) {
 
   useEffect(() => {
     axios.get("http://localhost:5000/products/add").then((response) => {
+      const product = response.data;
+      product.sort((a, b) => {
+        const product = a.importance;
+        const productB = b.importance;
+        let comparison = 0;
+        if (product > productB) {
+          comparison = 1;
+        } else if (product < productB) {
+          comparison = -1;
+        }
+        return comparison;
+      });
       console.log(response.data);
       setProduct(response.data);
     });
@@ -60,7 +72,7 @@ function Add_new({ updating }) {
     <div className="container-new-product rgba-stylish-strong py-5 px-5 z-depth-4">
       <Col className="product-image">
         <h1 className="white-text font-weight-bold">Add New Product</h1>
-        <Form className="formProduct" onSubmit={add}>
+        <Form className="formProduct" onSubmit={addGrocery}>
           <Form.Group>
             <Form.Label>Importancy</Form.Label>
             <Form.Control
@@ -79,7 +91,7 @@ function Add_new({ updating }) {
             <Form.Control
               name="productName"
               type="text"
-              placeholder="What is your product name?"
+              placeholder="What is ur product?Potatoes, lemons, etc?"
               onChange={(e) =>
                 setName({ ...data, productName: e.target.value })
               }
@@ -111,14 +123,18 @@ function Add_new({ updating }) {
           </Button>
         </Form>
       </Col>
-      {deleteMsg != null && <Alert variant="success">{deleteMsg}</Alert>}
+      {deleteMsg != null && (
+        <Alert className="w-50" variant="dark ml-5 mt-5">
+          {deleteMsg}
+        </Alert>
+      )}
       <h1 className="mt-5 mb-5">My Products</h1>
       <div className="container-fluid d-flex">
         {product.map((item) => {
           return (
-            <div className="">
+            <div className=" ">
               <Card
-                className="column-cards m-1 bg-success text-center"
+                className=" m-1 bg-success text-center"
                 style={{ width: "18rem" }}
               >
                 <Card.Body className="ml-1">
@@ -152,4 +168,4 @@ function Add_new({ updating }) {
   );
 }
 
-export default Add_new;
+export default Addnewproduct;
