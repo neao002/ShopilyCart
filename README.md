@@ -7,8 +7,8 @@ Here i would like to give the exact task that has been giving to use, and in my 
 Lets have fun together in this Journey that i will be telling to you, also, if you want to ask me something do not hesistate! Here we go!
 
 (21-05-2021..17:38 friday afternoon in Berlin : )
+(24-05-2021...21:49 monday night, finishing this long journy but also one that brought me many new important learning on my new path career live)
 
-22:52, finishig first day after 5 days of coding without any break :), It was not Easy to apply CRUD with the mix of data base, also, update part is not still possible and i need to find a solution tomorrow. I was proud to be available to connect my Client to my DataBase, also upload photos and recieve the information of my grocery Shop. Tomorrow will be a new day full of new task's but i could make it for sure.
 
 The task:
 
