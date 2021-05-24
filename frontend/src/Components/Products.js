@@ -6,7 +6,7 @@ import "./Css/Products.css";
 
 function Add_new({ updating }) {
   const [data, setName] = useState({
-    importance: "",
+    importance: 1,
     productName: "",
     price: "",
     descripcion: " ",
@@ -57,10 +57,10 @@ function Add_new({ updating }) {
   };
 
   return (
-    <div className="container-new-product  rgba-stylish-strong py-5 px-5 z-depth-4">
+    <div className="container-new-product rgba-stylish-strong py-5 px-5 z-depth-4">
       <Col className="product-image">
         <h1 className="white-text font-weight-bold">Add New Product</h1>
-        <Form className=" formProduct" onSubmit={add}>
+        <Form className="formProduct" onSubmit={add}>
           <Form.Group>
             <Form.Label>Importancy</Form.Label>
             <Form.Control
@@ -112,40 +112,42 @@ function Add_new({ updating }) {
         </Form>
       </Col>
       {deleteMsg != null && <Alert variant="success">{deleteMsg}</Alert>}
-      <h1 className="mt-5">My Products</h1>
-      {product.map((item) => {
-        return (
-          <CardDeck>
-            <Card
-              className=" mb-5 bg-success text-center"
-              style={{ width: "18rem" }}
-            >
-              <Card.Body>
-                <Card.Title>
-                  <h3 className="text-white">Product Name:</h3>
-                  <h4>{item.productName}</h4>
-                </Card.Title>
-                <Card.Title>
-                  <h3 className="text-white">Price</h3>
-                  <Card.Text>{item.price}$</Card.Text>
-                </Card.Title>
-                <Card.Title>
-                  <h3 className="text-white">Description:</h3>
-                  <Card.Text>{item.descripcion}</Card.Text>
-                </Card.Title>
-              </Card.Body>
+      <h1 className="mt-5 mb-5">My Products</h1>
+      <div className="container-fluid d-flex">
+        {product.map((item) => {
+          return (
+            <div className="">
+              <Card
+                className="column-cards m-1 bg-success text-center"
+                style={{ width: "18rem" }}
+              >
+                <Card.Body className="ml-1">
+                  <Card.Title>
+                    <h3 className="text-white">Product Name:</h3>
+                    <h4>{item.productName}</h4>
+                  </Card.Title>
+                  <Card.Title>
+                    <h3 className="text-white">Price</h3>
+                    <Card.Text>{item.price}$</Card.Text>
+                  </Card.Title>
+                  <Card.Title>
+                    <h3 className="text-white">Description:</h3>
+                    <Card.Text>{item.descripcion}</Card.Text>
+                  </Card.Title>
+                </Card.Body>
 
-              <Button className="buttonUpdate btn btn-warning">
-                <Link to={`/update/${item._id}`}>Update</Link>
-              </Button>
+                <Button className="buttonUpdate btn btn-warning">
+                  <Link to={`/update/${item._id}`}>Update</Link>
+                </Button>
 
-              <Button type="button" onClick={() => deleteProduct(item._id)}>
-                Delete
-              </Button>
-            </Card>
-          </CardDeck>
-        );
-      })}
+                <Button type="button" onClick={() => deleteProduct(item._id)}>
+                  Delete
+                </Button>
+              </Card>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

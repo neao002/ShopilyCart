@@ -79,7 +79,7 @@ function Update() {
               setUpdateItem({ ...updateItem, price: e.target.value })
             }
           />
-          <Form.Label>Describe your product</Form.Label>
+          <Form.Label>Description</Form.Label>
           <Form.Control
             value={updateItem.descripcion}
             name="descripcion"

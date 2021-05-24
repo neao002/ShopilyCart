@@ -47,15 +47,6 @@ h3 .addProduct {
   margin-top: 10px;
 }
 
-.myProductsContainer {
-  display: flex;
-  border: 1px solid black;
-  width: 100%;
-}
-
 .buttonUpdate a {
   text-decoration: none !important;
-}
-
-div.card-body {
 }

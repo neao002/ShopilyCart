@@ -12,6 +12,9 @@ function Products() {
         <div className="mb-5  text-light" id="div1">
           Welcome To GrocyShop
         </div>
+        <div className="mt-5 designed">
+          <h4>Website designed to Active-It Recruitment, By Nico Alvarez </h4>
+        </div>
       </div>
     </div>
   );
