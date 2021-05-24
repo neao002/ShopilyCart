@@ -43,7 +43,7 @@ Conclusion:
 
 Planing, thinking and studying at the same time, in only 4 days to create this Coding Challenge, has giving me the tools to create and develope a nice app from scratch wich i feel happy with. NodeJs with the mix of an amazing FrameWork as React, can give you the facility to bring a online app on and easy way and with the speed and facility that i needed for this Project. Heroku has a great deploying system to bring your MongoDB data online and use it wherever and whenever you wants. 
 
-Thanks for this experience to It Active Challenge, and i hope your team is happy with what i've develope.
+Thanks for this experience to Active It Recruitment, and i hope your team is happy with what i've develope.
 
 Thanks,
 
