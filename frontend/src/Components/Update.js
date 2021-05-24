@@ -27,7 +27,7 @@ function Update() {
     };
     await axios
       .post(
-        `https://shoppygrocy.herokuapp.com/products/updatedshop/${match.params.id}`,
+        `https://groceryactiveit.herokuapp.com/products/updatedshop/${match.params.id}`,
         jsonUpdateItem,
         config
       )
@@ -49,7 +49,7 @@ function Update() {
   useEffect(() => {
     axios
       .get(
-        `https://shoppygrocy.herokuapp.com/products/update/${match.params.id}`
+        `https://groceryactiveit.herokuapp.com/products/update/${match.params.id}`
       )
       .then((response) => {
         console.log(response.data);

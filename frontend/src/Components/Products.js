@@ -30,7 +30,7 @@ function Addnewproduct({ updating }) {
     };
 
     axios
-      .post("https://shoppygrocy.herokuapp.com/add", jsonData, config)
+      .post("https://groceryactiveit.herokuapp.com/add", jsonData, config)
       .then((response) => {
         console.log(response.data);
         updating();
@@ -41,7 +41,7 @@ function Addnewproduct({ updating }) {
 
   useEffect(() => {
     axios
-      .get("https://shoppygrocy.herokuapp.com/products/add")
+      .get("https://groceryactiveit.herokuapp.com/products/add")
       .then((response) => {
         const product = response.data;
         product.sort((a, b) => {
