@@ -30,7 +30,11 @@ function Addnewproduct({ updating }) {
     };
 
     axios
-      .post("https://groceryactiveit.herokuapp.com/add", jsonData, config)
+      .post(
+        "https://groceryactiveit.herokuapp.com/products/add",
+        jsonData,
+        config
+      )
       .then((response) => {
         console.log(response.data);
         updating();
@@ -63,11 +67,13 @@ function Addnewproduct({ updating }) {
   // deleting my product from data base and browser
 
   const deleteProduct = (id) => {
-    axios.get("/products/delete/" + id).then((response) => {
-      setDeleteMsg(response.data);
-      console.log(response.data);
-      updating();
-    });
+    axios
+      .get("https://groceryactiveit.herokuapp.com/products/delete" + id)
+      .then((response) => {
+        setDeleteMsg(response.data);
+        console.log(response.data);
+        updating();
+      });
   };
 
   return (
