@@ -30,7 +30,7 @@ function Addnewproduct({ updating }) {
     };
 
     axios
-      .post("http://localhost:5000/products/add", jsonData, config)
+      .post("https://shoppygrocy.herokuapp.com/add", jsonData, config)
       .then((response) => {
         console.log(response.data);
         updating();
@@ -40,22 +40,24 @@ function Addnewproduct({ updating }) {
   // getting and fetching my data
 
   useEffect(() => {
-    axios.get("http://localhost:5000/products/add").then((response) => {
-      const product = response.data;
-      product.sort((a, b) => {
-        const product = a.importance;
-        const productB = b.importance;
-        let comparison = 0;
-        if (product > productB) {
-          comparison = 1;
-        } else if (product < productB) {
-          comparison = -1;
-        }
-        return comparison;
+    axios
+      .get("https://shoppygrocy.herokuapp.com/products/add")
+      .then((response) => {
+        const product = response.data;
+        product.sort((a, b) => {
+          const product = a.importance;
+          const productB = b.importance;
+          let difference = 0;
+          if (product > productB) {
+            difference = 1;
+          } else if (product < productB) {
+            difference = -1;
+          }
+          return difference;
+        });
+        console.log(response.data);
+        setProduct(response.data);
       });
-      console.log(response.data);
-      setProduct(response.data);
-    });
   }, [updating]);
 
   // deleting my product from data base and browser
