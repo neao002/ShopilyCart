@@ -1,3 +1,4 @@
+
 ﻿The following coding challenge has been giving by Michael Leutelt, one of the founders of IT Active Recruitment with the final goal to learn new way of coding alternative and real apps, apply what we've learn during this intensive web development course, and also to be available to do our Final Project and Intership with this interesting company that its giving us the change to be part of.
 
 To start with, we need to use a Full Stack Mern, in this case, react, mongoose and express with the facility to implement the design we would prefer, and in this case i would like to use Bootstrap react, Css, as for the time that we have to, only three days, is what give me the major advantage to procedure to develope a responsive App.
@@ -8,6 +9,8 @@ Lets have fun together in this Journey that i will be telling to you, also, if y
 
 (21-05-2021..17:38 friday afternoon in Berlin : )
 (24-05-2021...21:49 monday night, finishing this long journy but also one that brought me many new important learning on my new path career live)
+
+![1er dia](https://user-images.githubusercontent.com/69300841/119402924-e888b600-bcdd-11eb-94e9-e29bee7a270d.png)
 
 
 checkout website: https://neao002.github.io/ShopilyCart/
