@@ -68,7 +68,7 @@ function Addnewproduct({ updating }) {
 
   const deleteProduct = (id) => {
     axios
-      .get("https://groceryactiveit.herokuapp.com/products/delete" + id)
+      .get("https://groceryactiveit.herokuapp.com/products/delete/" + id)
       .then((response) => {
         setDeleteMsg(response.data);
         console.log(response.data);
