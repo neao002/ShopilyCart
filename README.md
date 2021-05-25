@@ -39,6 +39,8 @@ Here is my approach:
 
 7.- Even though my app was working perfect from my own server, after deploying react ( happened before, dont know the reason ) the links were not working properly and the gh page was not working as how i wanted. 
 
+
+Resume:
 Planning, thinking, and studying at the same time, in only 4 days to create this Coding Challenge, has given me the tools to create and develop a nice app from scratch which I feel happy with. NodeJs with the mix of an amazing FrameWork as React can give you the facility to bring an online app in an easy way and with the speed and facility that I needed for this Project. Heroku has a great deploying system to bring your MongoDB data online and use it wherever and whenever you want.
 
 Thanks for this experience to Active It Recruitment, and i hope your team is happy with what i've develope.
