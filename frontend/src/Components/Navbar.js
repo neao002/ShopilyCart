@@ -6,7 +6,7 @@ const Navbar = ({ click }) => {
     <nav className="navbar">
       <div className="navbar__logo">
         <h3>
-          <Link className="home" to="/">
+          <Link className="home" to="/ShopilyCart">
             GrocyShop
           </Link>
         </h3>
