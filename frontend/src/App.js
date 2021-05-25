@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "react-bootstrap";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import NavBar from "./Components/Navbar";
 import Products from "./Components/Products";
 
@@ -17,7 +17,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <HashRouter basename="/">
       <Container>
         <NavBar />
         <Switch>
@@ -34,7 +34,7 @@ function App() {
 
         <Footer />
       </Container>
-    </Router>
+    </HashRouter>
   );
 }
 
