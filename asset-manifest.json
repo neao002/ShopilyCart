@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/ShopilyCart/static/css/main.83b03401.chunk.css",
-    "main.js": "/ShopilyCart/static/js/main.5df41bc6.chunk.js",
-    "main.js.map": "/ShopilyCart/static/js/main.5df41bc6.chunk.js.map",
+    "main.js": "/ShopilyCart/static/js/main.4b4ae52f.chunk.js",
+    "main.js.map": "/ShopilyCart/static/js/main.4b4ae52f.chunk.js.map",
     "runtime-main.js": "/ShopilyCart/static/js/runtime-main.7fd527c3.js",
     "runtime-main.js.map": "/ShopilyCart/static/js/runtime-main.7fd527c3.js.map",
     "static/css/2.61b4cb56.chunk.css": "/ShopilyCart/static/css/2.61b4cb56.chunk.css",
-    "static/js/2.79ef2e4c.chunk.js": "/ShopilyCart/static/js/2.79ef2e4c.chunk.js",
-    "static/js/2.79ef2e4c.chunk.js.map": "/ShopilyCart/static/js/2.79ef2e4c.chunk.js.map",
+    "static/js/2.0b6591a9.chunk.js": "/ShopilyCart/static/js/2.0b6591a9.chunk.js",
+    "static/js/2.0b6591a9.chunk.js.map": "/ShopilyCart/static/js/2.0b6591a9.chunk.js.map",
     "static/js/3.6357ead2.chunk.js": "/ShopilyCart/static/js/3.6357ead2.chunk.js",
     "static/js/3.6357ead2.chunk.js.map": "/ShopilyCart/static/js/3.6357ead2.chunk.js.map",
     "index.html": "/ShopilyCart/index.html",
     "static/css/2.61b4cb56.chunk.css.map": "/ShopilyCart/static/css/2.61b4cb56.chunk.css.map",
     "static/css/main.83b03401.chunk.css.map": "/ShopilyCart/static/css/main.83b03401.chunk.css.map",
-    "static/js/2.79ef2e4c.chunk.js.LICENSE.txt": "/ShopilyCart/static/js/2.79ef2e4c.chunk.js.LICENSE.txt"
+    "static/js/2.0b6591a9.chunk.js.LICENSE.txt": "/ShopilyCart/static/js/2.0b6591a9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7fd527c3.js",
     "static/css/2.61b4cb56.chunk.css",
-    "static/js/2.79ef2e4c.chunk.js",
+    "static/js/2.0b6591a9.chunk.js",
     "static/css/main.83b03401.chunk.css",
-    "static/js/main.5df41bc6.chunk.js"
+    "static/js/main.4b4ae52f.chunk.js"
   ]
 }
