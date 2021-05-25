@@ -6,9 +6,9 @@ const Navbar = ({ click }) => {
     <nav className="navbar">
       <div className="navbar__logo">
         <h3>
-          <a className="home" href="/">
+          <Link className="home" to="/">
             GrocyShop
-          </a>
+          </Link>
         </h3>
       </div>
 
